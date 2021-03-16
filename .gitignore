@@ -1,0 +1,5 @@
+..venv
+.env
+NewsTest/.env.db
+test.dump
+static

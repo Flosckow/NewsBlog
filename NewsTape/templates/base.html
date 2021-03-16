@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+    <title>Заголовок главной страницы</title>
+</head>
+<body>
+<a href="{% url 'news_create' %}" class="top-menu"><b>Add your news</b><span class="glyphicon glyphicon-plus"></span></a>
+    <div class="footer">
+        {% block add_news %}
+        {% endblock add_news%}
+    </div>
+    <div class="wrapper">
+        <div class="content">
+            <h1>Список всех новостей </h1>
+            <div class="products-list">
+                {% block news_content %}
+                    {% include 'news_list.html' %}
+                {% endblock news_content %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

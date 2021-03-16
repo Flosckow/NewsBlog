@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Страница Новости</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <a href="/" class="go-back">На главную</a>
+            <h1>{{news.headers}}</h1>
+            <div class="swiper-wrapper">
+                {% for img in news.images.all %}
+                <div class="swiper-slide active ">
+                    <img src="{{img.image.url}}" alt="Какой-то продукт" class="product-image">
+                </div>
+                {% empty %}
+                    <li>No articles yet.</li>
+                {% endfor %}
+                <p>{{news.body_news}}</p>
+                <time>{{news.publication_date}}</time>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
